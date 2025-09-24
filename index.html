@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anywhere Food Door</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Add heading above the door -->
+    <h1 class="door-heading">The Anywhere Door: A Portal for Long-Distance Food Sharing</h1>
+    <div class="door-container">
+      <div class="door" id="door">
+        <div class="knob"></div>
+        <div class="frame"></div>
+        <div class="panel"></div>
+      </div>
+    </div>
+    <div id="form-area" class="hidden">
+      <form id="send-form">
+        <label>
+          Your name:
+          <input type="text" id="sender" required>
+        </label>
+        <label>
+          Dish name:
+          <input type="text" id="dish" required>
+        </label>
+        <button type="submit">Get Food Door Link</button>
+      </form>
+      <div id="link-result" class="hidden"></div>
+    </div>
+    <div id="receive-area" class="hidden">
+      <div class="food-message-container">
+        <div id="food-message" class="hidden"></div>
+      </div>
+      <form id="reply-form">
+        <label>
+          Send a dish back!
+          <input type="text" id="reply-dish" required>
+        </label>
+        <button type="submit">Send Back</button>
+      </form>
+      <div id="reply-link" class="hidden"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

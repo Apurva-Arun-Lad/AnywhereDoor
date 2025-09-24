@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffe6f0 0%, #f5e9ff 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* Heading above the door */
+.door-heading {
+  text-align: center;
+  color: #de5ca2;
+  font-size: 1.3em;
+  margin-bottom: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.door-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.door {
+  width: 120px;
+  height: 220px;
+  background: #ff69b4;
+  border-radius: 16px 16px 10px 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  cursor: pointer;
+  border: 6px solid #de5ca2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform-origin: left center;
+}
+
+.door.open {
+  animation: openDoor 0.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes openDoor {
+  0% { transform: rotateY(0deg); }
+  60% { transform: rotateY(-90deg); }
+  100% { transform: rotateY(-70deg); }
+}
+
+.knob {
+  width: 18px;
+  height: 18px;
+  background: #ffecb3;
+  border-radius: 50%;
+  position: absolute;
+  left: 18px;
+  bottom: 30px;
+  border: 3px solid #b36c53;
+}
+
+.frame {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  border: 2px solid #fff0fa;
+  pointer-events: none;
+}
+
+.panel {
+  width: 70px;
+  height: 110px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  position: absolute;
+  left: 25px;
+  top: 60px;
+  box-shadow: 0 0 8px #fff5fa inset;
+}
+
+label {
+  display: block;
+  margin: 16px 0 8px;
+  font-weight: 600;
+  color: #de5ca2;
+}
+
+input[type="text"] {
+  width: 94%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1.5px solid #ffb6d7;
+  margin-top: 2px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 18px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #de5ca2;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #c44a95;
+}
+
+#link-result, #reply-link {
+  margin-top: 18px;
+  background: #fff0fa;
+  border: 2px dashed #de5ca2;
+  padding: 12px;
+  border-radius: 8px;
+  word-break: break-all;
+}
+
+.food-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+#food-message {
+  font-size: 1.2em;
+  color: #c44a95;
+  background: #fff0fa;
+  border-radius: 8px;
+  padding: 10px 18px;
+  box-shadow: 0 2px 8px rgba(220, 92, 162, 0.05);
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(15px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 500px) {
+  .door-heading {
+    font-size: 1em;
+    margin-bottom: 12px;
+  }
+  .door-container {
+    height: 180px;
+  }
+  .door {
+    width: 80px;
+    height: 150px;
+  }
+  .panel {
+    width: 40px;
+    height: 60px;
+    left: 18px;
+    top: 40px;
+  }
+}
